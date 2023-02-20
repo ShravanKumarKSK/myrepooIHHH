@@ -1,0 +1,26 @@
+name: My Workflow
+
+on:
+  push:
+    tags: 
+      - qa*
+  release:
+    types: [ published, edited]
+    branches: [ main ]
+
+jobs:
+  job1:
+    if: github.event_name == 'push' 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 1
+        run: echo "Job 1 Step 1"
+      - name: Step 2
+        run: echo "Job 1 Step 2"
+  
+  job2:
+    if: github.event_name == 'release' 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 1
+        run: echo "this has been released cant be undone"
