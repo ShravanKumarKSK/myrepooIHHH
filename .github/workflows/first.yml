@@ -2,11 +2,12 @@ name: My Workflow
 
 on:
   push:
-    tags: 
+    tags:
       - qa*
   release:
-    types: [ published, edited]
-    branches: [ main ]
+    types: [published, edited]
+    branches:
+      - main
 
 jobs:
   job1:
